@@ -21,7 +21,6 @@
           packages = with pkgs; [
             nodejs_22
             nodePackages.npm
-            texliveFull
 
            ] 
           ++

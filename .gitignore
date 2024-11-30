@@ -1,4 +1,5 @@
-.direnv
-.envrc
-# lab1_test.csv
-# lab1_train.csv
+
+ .idea
+ .envrc
+ .direnv
+ 

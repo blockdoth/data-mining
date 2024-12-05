@@ -1,5 +1,5 @@
 {
-  description = "A Nix flake a development using a jupyter notebook for Data Mining";
+  description = "A Nix flake for Data Mining";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -16,27 +16,17 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
           shellHook = "
-            echo 'Entering a jupyter notebook shell for image proccessing'
+            echo 'Entering a jupyter notebook shell for data mining'
           ";
-          packages = with pkgs; [
-            nodejs_22
-            nodePackages.npm
-
-           ] 
-          ++
-          (with pkgs.python3Packages; [
+          packages = pkgs.python3Packages; [
             ipython
             scipy
-            imutils
-            ipywidgets
             pandas
-            seaborn
             numpy
             jupyterlab
             matplotlib
             notebook
-
-          ]);
+          ];
         };
       });
     };

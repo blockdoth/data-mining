@@ -18,7 +18,7 @@
           shellHook = "
             echo 'Entering a jupyter notebook shell for data mining'
           ";
-          packages = pkgs.python3Packages; [
+          packages = with pkgs.python311Packages; [
             ipython
             scipy
             pandas
@@ -26,6 +26,8 @@
             jupyterlab
             matplotlib
             notebook
+            networkx
+            gensim
           ];
         };
       });
